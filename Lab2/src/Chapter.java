@@ -1,32 +1,25 @@
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 public class Chapter {
-    private String title;
-    private ArrayList<SubChapter> subChapters;
+    String title;
+    List<SubChapter> subChapterList = new ArrayList<>();
 
     public Chapter(String title) {
         this.title = title;
-        this.subChapters = new ArrayList();
     }
-
-    public int addSubChapter(String subChapter) {
-        this.subChapters.add(new SubChapter(subChapter));
-        return this.subChapters.size() - 1;
+    public String getTitle() {
+        return title;
     }
-
-    public SubChapter getSubChapterByIndex(int index) {
-        return (SubChapter)this.subChapters.get(index);
+    public void setTitle(String newTitle){
+        this.title = newTitle;
     }
-
-    public void print() {
-        System.out.println("Capitol" + this.title);
-        Iterator var1 = this.subChapters.iterator();
-
-        while(var1.hasNext()) {
-            SubChapter i = (SubChapter)var1.next();
-            i.print();
-        }
-
+    public int createSubChapter(String newTitle){
+        subChapterList.add(new SubChapter(newTitle));
+        return subChapterList.size() - 1;
+    }
+    public SubChapter getSubChapter(int index){
+        return subChapterList.get(index);
     }
 }
