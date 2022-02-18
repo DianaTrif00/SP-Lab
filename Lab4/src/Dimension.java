@@ -1,17 +1,8 @@
 public class Dimension {
+    Integer x,y;
 
-    private int height;
-
-    private int width;
-
-    public Dimension(int height,int width)
-    {
-        this.height=height;
-        this.width=width;
-    }
-
-    public void print()
-    {
-        System.out.println("Dimension :"+height+","+width);
+    public Dimension(Integer a, Integer b){
+        this.x = a;
+        this.y = b;
     }
 }
