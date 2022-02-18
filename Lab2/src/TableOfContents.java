@@ -1,8 +1,16 @@
 public class TableOfContents {
-    public TableOfContents() {
-    }
+    String title;
 
-    public void print() {
-        System.out.println("Cuprins");
+    public TableOfContents(String title) {
+        this.title = title;
+    }
+    public void print(){
+        System.out.println(this.title);
+    }
+    public String getTitle(){
+        return this.title;
+    }
+    public void setTitle(String newTitle){
+        this.title = title;
     }
 }
