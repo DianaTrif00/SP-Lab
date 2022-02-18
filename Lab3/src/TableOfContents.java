@@ -1,22 +1,19 @@
-public class TableOfContents implements Element {
-    public void print() {
-        System.out.println("Cuprins");
-    }
+public class TableOfContents implements Element{
+        String title;
 
-    @Override
-    public void add(Element element) {
-        //not needed
-    }
+        public TableOfContents(String title) {
+            this.title = title;
+        }
 
-    @Override
-    public void remove(Element element) {
-        //not needed
-    }
-
-    @Override
-    public boolean find(Element element) {
-        //not needed
-        return false;
-    }
+        @Override
+        public void print(){
+            System.out.println(this.title);
+        }
+        public String getTitle(){
+            return this.title;
+        }
+        public void setTitle(String newTitle){
+            this.title = title;
+        }
 }
 
