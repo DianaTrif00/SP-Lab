@@ -2,33 +2,33 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Book {
-    public String name;
-    public List<String> paragrafe;
-    public List<String> imagini;
-    public List<String> tabel;
+    String title;
+    List<String> elements = new ArrayList<>();
 
-    public Book(String name) {
-        this.name = name;
-        this.paragrafe = new ArrayList();
-        this.imagini = new ArrayList();
-        this.tabel = new ArrayList();
+    public Book(String title) {
+        this.title = title;
     }
-
-    public void createNewParagraph(String paragraf) {
-        this.paragrafe.add(paragraf);
+    public void createNewParagraph(String newTitle){
+        elements.add(newTitle);
     }
-
-    public void createNewImage(String imagine) {
-        this.imagini.add(imagine);
+    public void createNewImage(String newTitle){
+        elements.add(newTitle);
     }
-
-    public void createNewTable(String tabele) {
-        this.tabel.add(tabele);
+    public void createNewTable(String newTitle){
+        elements.add(newTitle);
     }
-
-    public void print() {
-        System.out.println(this.paragrafe);
-        System.out.println(this.imagini);
-        System.out.println(this.tabel);
+    public void print(){
+        for (String e: this.elements){
+            System.out.println(e);
+        }
+    }
+    public String getTitle(){
+        return this.title;
+    }
+    public List<String> getElements(){
+        return this.elements;
+    }
+    public void setTitle(String newTitle){
+        this.title = newTitle;
     }
 }
