@@ -1,51 +1,36 @@
 import java.util.ArrayList;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Section implements Element {
-    private String title;
-    private ArrayList<Element> elements =new ArrayList<>();
+    String title;
+    List<Element> elementList = new ArrayList<>();
 
     public Section(String title) {
         this.title = title;
     }
 
     @Override
-    public void add(Element element) {
-        this.elements.add(element.clone());
+    public void add(Element e) {
+        elementList.add(e);
     }
 
     @Override
-    public void remove(Element element) {
-        this.elements.remove(element);
-    }
-
-    @Override
-    public boolean find(Element element) {
-        for (Element i : this.elements) {
-            if (i.find(element))
-                return true;
-        }
-
-        return false;
-    }
-
-    @Override
-    public Element clone() {
-        Section newclone = new Section(this.title);
-
-        for(Element el : this.elements)
-        {
-            newclone.add(el.clone());
-        }
-
-        return newclone;
-    }
-
     public void print() {
-        System.out.println("Titlu: " + this.title);
-
-        for (Element i : this.elements)
-            i.print();
+        System.out.println(this.title);
+        for (Element e: this.elementList){
+            e.print();
+        }
+    }
+    public String getTitle(){
+        return this.title;
+    }
+    public List<Element> getElementList(){
+        return this.elementList;
+    }
+    public void setTitle(String newTitle){
+        this.title = newTitle;
     }
 }
-
