@@ -1,30 +1,18 @@
 public class Image implements Element {
-    private String imageName;
+    String url;
 
-    public Image(String imageName) {
-        this.imageName = imageName;
+    public Image(String url) {
+        this.url = url;
     }
 
+    @Override
     public void print() {
-        System.out.println(this.imageName);
+        System.out.println(this.url);
     }
-
-    @Override
-    public void add(Element element) {
-        //not needed
+    public String getUrl(){
+        return this.url;
     }
-
-    @Override
-    public void remove(Element element) {
-        //not needed
-    }
-
-    @Override
-    public boolean find(Element element) {
-        if (!(element instanceof Image))
-            return false;
-        else {
-            return ((Image) element).imageName.equals(this.imageName);
-        }
+    public void setUrl(String newUrl){
+        this.url = newUrl;
     }
 }
