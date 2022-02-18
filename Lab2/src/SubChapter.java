@@ -1,27 +1,32 @@
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 public class SubChapter {
-    private String name;
-    private ArrayList<Element> elements;
+    String title;
+    List<String> elements = new ArrayList<>();
 
-    public SubChapter(String name) {
-        this.name = name;
-        this.elements = new ArrayList();
+    public SubChapter(String title) {
+        this.title = title;
     }
-
-    public void addElement(Element element) {
-        this.elements.add(element);
+    public String getTitle(){
+        return this.title;
     }
-
-    public void print() {
-        System.out.println("Subcapitol " + this.name);
-        Iterator var1 = this.elements.iterator();
-
-        while(var1.hasNext()) {
-            Element i = (Element)var1.next();
-            i.print();
+    public void setTitle(String newTitle){
+        this.title = newTitle;
+    }
+    public void createNewParagraph(String element){
+        elements.add(element);
+    }
+    public void createNewImage(String element){
+        elements.add(element);
+    }
+    public void createNewTable(String element){
+        elements.add(element);
+    }
+    public void print(){
+        for (String e: this.elements){
+            System.out.println(e);
         }
-
     }
 }
