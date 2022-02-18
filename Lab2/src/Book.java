@@ -1,37 +1,36 @@
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 public class Book {
-    private String title;
-    private ArrayList<Chapter> chapters;
-    private ArrayList<Author> authors;
-    private TableOfContents toc;
+    String title;
+    List<Author> authors = new ArrayList<>();
+    List<Chapter> chapters = new ArrayList<>();
 
     public Book(String title) {
         this.title = title;
-        this.chapters = new ArrayList();
-        this.authors = new ArrayList();
-        this.toc = new TableOfContents();
     }
 
-    public int addChapter(String chapter) {
-        this.chapters.add(new Chapter(chapter));
-        return this.chapters.size() - 1;
+    public void addAuthor(Author newAuthor){
+        authors.add(newAuthor);
     }
-
-    public Chapter getChapterByIndex(int index) {
-        return (Chapter)this.chapters.get(index);
+    public int createChapter(String chapter){
+        chapters.add(new Chapter(chapter));
+        return chapters.size() - 1;
     }
-
-    public void addAuthor(Author author) {
-        this.authors.add(author);
+    public Chapter getChapter(int index){
+        return chapters.get(index);
     }
-
-    public void print() {
-        System.out.println("Carte" + this.title);
-        this.toc.print();
-        System.out.println("Autori: ");
-        Iterator var1 = this.authors.iterator();
+    public String getTitle(){
+        return this.title;
+    }
+    public List<Author> getAuthors(){
+        return this.authors;
+    }
+    public List<Chapter> getChapters(){
+        return this.chapters;
+    }
+}
 
         while(var1.hasNext()) {
             Author i = (Author)var1.next();
