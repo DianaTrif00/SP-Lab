@@ -1,30 +1,18 @@
 public class Table implements Element {
-    private String title;
+    String title;
 
     public Table(String title) {
         this.title = title;
     }
 
+    @Override
     public void print() {
         System.out.println(this.title);
     }
-
-    @Override
-    public void add(Element element) {
-        //not needed
+    public String getTitle(){
+        return this.title;
     }
-
-    @Override
-    public void remove(Element element) {
-        //not needed
-    }
-
-    @Override
-    public boolean find(Element element) {
-        if (!(element instanceof Table))
-            return false;
-        else {
-            return ((Table) element).title.equals(this.title);
-        }
+    public void setTitle(String newTitle){
+        this.title = newTitle;
     }
 }
