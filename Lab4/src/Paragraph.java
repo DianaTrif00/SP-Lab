@@ -1,37 +1,19 @@
 public class Paragraph implements Element {
-    private String text;
+    String text;
 
     public Paragraph(String text) {
         this.text = text;
     }
 
+    @Override
     public void print() {
-        System.out.println(this.text);
+        System.out.println("Paragraph: " + this.text);
     }
-
-    @Override
-    public void add(Element element) {
-        //not needed
+    public String getParagraph(){
+        return this.text;
     }
-
-    @Override
-    public void remove(Element element) {
-        //not needed
-    }
-
-    @Override
-    public boolean find(Element element) {
-        if (!(element instanceof Paragraph))
-            return false;
-        else {
-            return ((Paragraph) element).text.equals(this.text);
-        }
-    }
-
-    @Override
-    public Element clone() {
-        Paragraph newparagraph = new Paragraph(this.text);
-        return newparagraph;
+    public void setParagraph(String newParagraph){
+        this.text = newParagraph;
     }
 }
 
